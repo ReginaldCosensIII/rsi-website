@@ -1,0 +1,221 @@
+/*
+ * HOMEPAGE-SPECIFIC STYLES
+ * Contains layouts and styles that are unique to the homepage.
+*/
+
+/* =================================================================
+   HERO SECTION
+   ================================================================= */
+.hero-section {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0; /* UPDATED: Smaller default padding for mobile */
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image:
+        linear-gradient(rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7)),
+        url('../images/homepage/AdobeStock_445895041.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    max-width: 25ch;
+    font-size: 3.25rem;
+    color: var(--color-accent-red);
+    margin-bottom: 1.5rem;
+}
+
+.hero-section h2 {
+    color: var(--color-gray-200);
+    font-size: 2.25rem;
+    max-width: 30ch;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-section .btn-primary {
+    border-color: var(--color-accent-yellow);
+}
+
+.hero-section .btn-primary:hover {
+    border-color: var(--color-accent-yellow);
+}
+
+.hero-section .btn-secondary {
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.hero-section .btn-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* =================================================================
+   WHY RSI SECTION
+   ================================================================= */
+.choose-rsi-section {
+    text-align: center;
+}
+
+.choose-rsi-section h2 {
+    font-size: 2.25rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column for mobile */
+    gap: 2rem;
+}
+
+.card-icon {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 1.5rem auto;
+    background-color: var(--color-accent-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =================================================================
+   SOLUTIONS & SERVICES SECTION
+   ================================================================= */
+.services-section {
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column for mobile */
+    gap: 2rem;
+    text-align: left;
+}
+
+/* =================================================================
+   TESTIMONIALS SECTION
+   ================================================================= */
+.testimonials-section {
+    text-align: center;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column for mobile */
+    gap: 2rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.testimonial-card {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border: 0.0625rem solid var(--color-border);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.9375rem rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.testimonial-stars {
+    color: var(--color-accent-yellow);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card h3 {
+    margin-bottom: 1rem;
+}
+
+.testimonial-body {
+    font-style: italic;
+    color: var(--color-secondary);
+    flex-grow: 1;
+}
+
+.testimonial-author-info {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.testimonial-avatar {
+    width: 5.0rem;
+    height: 5.0rem;
+    position: absolute;
+    bottom: 2.0rem;
+    right: 3.5rem;
+}
+
+.testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 0;
+}
+
+.testimonial-title {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    margin-bottom: 0;
+}
+
+/* =================================================================
+   RESPONSIVE OVERRIDES FOR DESKTOP
+   ================================================================= */
+
+/* Medium screens and up (Tablets) */
+@media (min-width: 48rem) { /* 768px */
+    .features-grid,
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large screens and up (Desktops) */
+@media (min-width: 62rem) { /* 992px */
+    .hero-section {
+        padding: 6rem 0; /* Restore larger padding on desktop */
+    }
+
+    .features-grid,
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

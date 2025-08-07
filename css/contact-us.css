@@ -1,0 +1,104 @@
+/* --- Page Hero Banner (Reusable) --- */
+.page-hero-section {
+    background-image:
+        linear-gradient(rgba(255, 0, 0, 0.7), rgba(255, 0, 0, 0.7)),
+        url('../images/homepage/AdobeStock_445895041.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.page-hero-section h1 {
+    color: var(--color-white);
+    font-size: 3rem;
+}
+
+/* --- Main Contact Section Layout --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "form sidebar";
+    gap: 3rem;
+    align-items: start;
+}
+
+.contact-form-container {
+    grid-area: form;
+}
+.contact-info-container {
+    grid-area: sidebar;
+}
+
+
+/* --- Contact Form Styles --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 0.0625rem solid var(--color-border); /* 1px */
+    border-radius: 0.3125rem; /* 5px */
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+
+/* --- Contact Info & Map Styles --- */
+.contact-info-card {
+    background-color: var(--color-background-alt);
+    padding: 2rem;
+    border-radius: 0.625rem; /* 10px */
+    margin-bottom: 2rem;
+}
+.contact-info-card .contact-item {
+    margin-bottom: 1rem;
+}
+
+.google-map-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: var(--color-gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.625rem; /* 10px */
+}
+
+/* --- Department Cards --- */
+.department-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+.department-card {
+    background-color: var(--color-white);
+    border: 0.0625rem solid var(--color-border); /* 1px */
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.9375rem rgba(0,0,0,0.05); /* 4px 15px */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Responsive Overrides for Contact Page --- */
+@media (max-width: 48rem) { /* 768px */
+    .contact-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "form"
+            "sidebar";
+    }
+    .department-grid {
+        grid-template-columns: 1fr;
+    }
+}

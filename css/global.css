@@ -1,0 +1,586 @@
+/*
+ * GLOBAL STYLESHEET
+ * Defines foundational styles, variables, and reusable components.
+*/
+
+/* =================================================================
+           **************** GLOBAL STYLES *****************
+   ================================================================= */
+:root {
+    /* Accent Colors */
+    --color-accent-yellow: #f1c40f;
+    --color-accent-red: #ff0000;
+    --color-accent-gray-red: #e9e2e2; /* NEW: Light gray with a red tint */
+
+    /* Grayscale Palette */
+    --color-white: #ffffff;
+    --color-gray-100: #f8f9fa; /* The lightest gray for alt backgrounds */
+    --color-gray-200: #dadada; /* Original light gray */
+    --color-gray-300: #c7c7cd; /* Original border gray */
+    --color-gray-600: #6c757d; /* NEW: Between medium and light gray */
+    --color-gray-700: #3f3f3f; /* Original medium gray */
+    --color-gray-800: #393939; /* NEW: Between medium and dark gray */
+    --color-gray-900: #333333; /* The darkest gray */
+    --color-black: #000000;
+
+    /* Semantic Mapping (Applying the brand colors to roles) */
+    --color-primary: var(--color-gray-900);      /* For headings and primary text (darkest) */
+    --color-secondary: var(--color-gray-700);   /* For less important text */
+    --color-accent: var(--color-accent-yellow);    /* Main interactive color for buttons, links */
+    --color-background: var(--color-white);       /* Main page background */
+    --color-background-dark: var(--color-gray-800); /* The new, softer dark background */
+    --color-background-alt: var(--color-gray-100);
+    --color-text: var(--color-gray-900);         /* Default body text (darkest) */
+    --color-border: var(--color-gray-300);      /* For borders and dividers */
+    --color-light-gray: var(--color-gray-100);
+
+    /* Fonts */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+/* --- Basic Resets & Document Styles --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.25rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Layout & Spacing --- */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 60px 0;
+}
+
+.section-alt-bg {
+    background-color: var(--color-background-alt);
+}
+
+.section-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.section-intro-text {
+    font-size: 1.125rem;
+    color: var(--color-secondary);
+    line-height: 1.7;
+    max-width: 50rem; /* 800px */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}
+
+/* --- Components: Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0.3125rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    border: 0.125rem solid transparent;
+    text-align: center;
+
+    /* ADDED to fully normalize button appearance */
+    margin: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.btn-primary {
+    background-color: var(--color-background-dark);
+    color: var(--color-accent-yellow);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-gray-600);
+    color: var(--color-accent-yellow);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+/* --- Components: Links --- */
+.learn-more {
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* =================================================================
+            **************** CARD STYLES *****************
+   ================================================================= */
+
+/* --- Base Card Style (shared by all cards) --- */
+.card {
+    background-color: var(--color-white);
+    border: 0.0625rem solid var(--color-border);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.9375rem rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* --- Card Modifier (for icon cards) --- */
+.card--icon {
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+/* --- Card Elements (parts inside the cards) --- */
+.card-image-top {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-top-left-radius: 0.625rem;
+    border-top-right-radius: 0.625rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-content {
+    padding: 0 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: flex-start;
+}
+
+.card-content .learn-more {
+    margin-top: auto;      /* Pushes the button to the bottom of the card */
+    align-self: flex-end;  /* Pushes the button to the right side */
+}
+
+.card-icon {
+    width: 5rem;
+    height: 5rem;
+    margin: 0 auto 1.5rem auto;
+    background-color: var(--color-accent-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon i {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+}
+
+/* =================================================================
+           **************** HEADER STYLES *****************
+   ================================================================= */
+
+/* Main sticky container for the entire header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* The dark gray top bar with contact info */
+.header-top-bar {
+    background-color: var(--color-background-dark);
+    color: var(--color-light-gray);
+    padding: 0.5rem 0; /* 8px */
+    font-size: 0.85rem;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem; /* approx 15px */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* 8px */
+}
+
+.header-top-bar a {
+    color: var(--color-light-gray);
+    transition: color 0.3s ease;
+}
+
+.header-top-bar a:hover {
+    color: var(--color-accent-yellow);
+    text-decoration: none;
+}
+
+.header-top-bar .separator {
+    color: var(--color-medium-gray);
+}
+
+.header-top-bar .fa-solid {
+    color: var(--color-accent-yellow);
+}
+
+/* The main white header area with logo and nav */
+.header-main {
+    background-color: var(--color-white);
+    padding: 2rem 0 0.5rem 0; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-main .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 3.125rem;
+    width: auto;
+    display: block;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.main-nav a {
+    color: var(--color-primary);
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding-bottom: 0.3125rem; /* 5px */
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.main-nav a:hover {
+    border-bottom-color: var(--color-accent-red);
+    text-decoration: none;
+}
+
+/* =================================================================
+           **************** FOOTER STYLES *****************
+   ================================================================= */
+
+.site-footer {
+    background-color: var(--color-background-dark);
+    color: var(--color-light-gray);
+    padding: 2.5rem 0 0 0;
+}
+
+/* This is the new wrapper for the main footer content */
+.footer-main {
+    /* On mobile, columns stack by default. On desktop, we'll make them side-by-side. */
+}
+
+.footer-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.0rem;
+    text-align: left;
+}
+
+.site-footer .contact-item .fa-solid {
+    color: var(--color-accent-yellow);
+}
+
+.footer-details p {
+    margin-bottom: 0.5rem;
+    color: var(--color-light-gray);
+}
+
+.footer-links {
+    text-align: left;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+}
+
+.footer-copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 0.0625rem solid var(--color-gray-300);
+    font-size: 0.85rem;
+    color: var(--color-light-gray);
+}
+
+.footer-copyright p {
+    margin-bottom: 0;
+}
+
+.site-footer h3 {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.site-footer a {
+    color: var(--color-white);
+}
+
+.site-footer a:hover {
+    color: var(--color-accent-red);
+    text-decoration: none;
+}
+
+/* Media Query for larger screens */
+@media (min-width: 48rem) { /* 768px */
+    .footer-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .footer-links {
+        margin-right: 5rem;
+    }
+}
+
+/* =================================================================
+   MOBILE NAVIGATION STYLES
+   ================================================================= */
+
+/* --- The Hamburger Button --- */
+.mobile-nav-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+.mobile-nav-toggle .fa-bars {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+/* --- Mobile Menu Styles (Default State is Hidden Off-Screen) --- */
+.main-nav ul {
+    position: fixed;
+    inset: 0 0 0 30%; /* top, right, bottom, left */
+    
+    flex-direction: column;
+    padding: min(20vh, 10rem) 2rem;
+    gap: 2rem;
+    
+    background-color: hsla(0, 0%, 10%, 0.9);
+    backdrop-filter: blur(1rem);
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+}
+
+/* --- Mobile Menu Styles (Visible/Open State) --- */
+.main-nav ul[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+.main-nav ul a {
+    color: var(--color-white);
+    font-size: 1.25rem;
+}
+.main-nav ul a:hover {
+    color: var(--color-accent-yellow);
+}
+
+/* --- Media Query for Desktop --- */
+@media (min-width: 62rem) { /* 992px */
+    .mobile-nav-toggle {
+        display: none; /* Hide hamburger on desktop */
+    }
+
+    /* Reset nav list styles for desktop view */
+    #main-nav-list {
+        position: static;
+        flex-direction: row;
+        padding: 0;
+        gap: 1rem;
+        background: transparent;
+        backdrop-filter: none;
+        transform: none;
+    }
+
+    #main-nav-list a {
+        color: var(--color-primary);
+        font-size: 0.95rem;
+    }
+}
+
+/* =================================================================
+   MOBILE NAVIGATION STYLES (Consolidated & Corrected)
+   ================================================================= */
+
+/* --- The Hamburger Button --- */
+.mobile-nav-toggle {
+    display: none; /* Hidden on desktop, shown in media query */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 9999; /* Ensures it's on top of other content */
+}
+
+.mobile-nav-toggle .fa-solid {
+    font-size: 2rem; /* INCREASED: Makes icon larger */
+    color: var(--color-accent-yellow);
+}
+
+/* Logic to show the correct icon (hamburger vs. close) */
+.mobile-nav-toggle .fa-xmark {
+    display: none; /* Hide the X by default */
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .fa-xmark {
+    display: block; /* Show the X when the menu is open */
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .fa-bars {
+    display: none; /* Hide the hamburger when the menu is open */
+}
+
+/* For screen reader accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* --- Mobile Menu Styles --- */
+#main-nav-list {
+    /* Desktop styles are reset in the media query below */
+}
+
+
+/* --- Media Query for Mobile/Tablet --- */
+@media (max-width: 61.99rem) { /* Applies to screens smaller than 992px */
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    #main-nav-list {
+        position: fixed;
+        inset: 0 0 0 30%;
+        
+        flex-direction: column;
+        padding: min(20vh, 10rem) 2rem;
+        gap: 1.0rem;
+        
+        background-color: hsla(0, 0%, 10%, 0.9);
+        backdrop-filter: blur(1rem);
+
+        transform: translateX(100%);
+        transition: transform 350ms ease-out;
+    }
+
+    #main-nav-list[data-visible="true"] {
+        transform: translateX(0%);
+    }
+
+    #main-nav-list a {
+        color: var(--color-white);
+        font-size: 1.25rem;
+    }
+
+    /* Keep the original desktop nav styles */
+    .main-nav ul {
+        display: flex;
+    }
+}
+
+
+/* =================================================================
+   RESPONSIVE FOOTER & NAV LINK ADJUSTMENTS
+   ================================================================= */
+
+/* --- Mobile-First Styles --- */
+
+/* By default (on mobile), hide the footer's Quick Links */
+.footer-links {
+    display: none;
+}
+
+/* --- Media Query for Desktop --- */
+@media (min-width: 48rem) { /* 768px */
+    /* On larger screens, show the footer's Quick Links again */
+    .footer-links {
+        display: block;
+    }
+}
+
+@media (min-width: 62rem) { /* 992px */
+    /* On larger screens, hide the mobile-only FAQ link from the main nav */
+    .main-nav .mobile-only {
+        display: none;
+    }
+}
