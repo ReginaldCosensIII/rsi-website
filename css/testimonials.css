@@ -1,0 +1,142 @@
+/* --- Page Hero Banner (Reusable) --- */
+.page-hero-section {
+    background-image: 
+        linear-gradient(rgba(255, 0, 0, 0.7), rgba(255, 0, 0, 0.7)),
+        url('../images/homepage/AdobeStock_445895041.jpeg'); /* Placeholder */
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.page-hero-section h1 {
+    color: var(--color-white);
+    font-size: 3rem;
+}
+
+/* --- General Section Styling --- */
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* --- Video Testimonial Section --- */
+.video-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+
+/* --- Written Testimonials Section --- */
+.testimonials-grid {
+    /* UPDATED: Changed from a grid to a single-column flex layout */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px; /* Constrains the width for better readability on desktop */
+    margin: 0 auto;   /* Centers the single column */
+}
+
+.testimonial-card {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-stars {
+    color: var(--color-accent-yellow);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-body {
+    font-style: italic;
+    color: var(--color-secondary);
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.testimonial-avatar {
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+}
+
+.testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-title {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+}
+
+/* --- CTA Section --- */
+.cta-section {
+    background-color: var(--color-background-alt);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+}
+
+.cta-section p {
+    font-size: 1.125rem;
+    color: var(--color-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* --- Call to Action Section --- */
+.cta-section {
+    background-image: 
+        linear-gradient(rgba(175, 175, 175, 0.9), rgba(212, 212, 212, 0.9)),
+        url('/images/homepage/AdobeStock_445895041.jpeg');
+    background-color: var(--color-background-alt);
+    text-align: center;
+    min-height: 60vh; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;    
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+}
+
+.cta-section p {
+    font-size: 1.125rem;
+    color: var(--color-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}

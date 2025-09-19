@@ -1,0 +1,103 @@
+/* =================================================================
+   SHARED STYLES FOR PRODUCT, SOLUTIONS, & SERVICE PAGES
+   ================================================================= */
+
+/* --- Page Hero Banner (Reusable) --- */
+.page-hero-section {
+    background-image: 
+        linear-gradient(rgba(255, 0, 0, 0.7), rgba(255, 0, 0, 0.7)),
+        url('../images/homepage/AdobeStock_445895041.jpeg'); /* Placeholder */
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.page-hero-section h1 {
+    color: var(--color-white);
+    font-size: 3rem;
+}
+
+/* --- General Section Styling --- */
+.section-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* --- Two-Column Feature Layout --- */
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.feature-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.feature-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-content p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Product/Category Grid --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* --- Call to Action Section --- */
+.cta-section {
+    background-color: var(--color-background-alt);
+    text-align: center;
+}
+
+/* --- Responsive Overrides --- */
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+    .feature-grid .feature-image {
+        order: -1; /* Move image above text on mobile */
+    }
+    .cta-section {
+        min-height: 40vh;
+    }
+}
+/* --- Call to Action Section --- */
+.cta-section {
+    background-image: 
+        linear-gradient(rgba(175, 175, 175, 0.9), rgba(212, 212, 212, 0.9)),
+        url('/images/homepage/AdobeStock_445895041.jpeg');
+    background-color: var(--color-background-alt);
+    text-align: center;
+    min-height: 60vh; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;    
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+}
+
+.cta-section p {
+    font-size: 1.125rem;
+    color: var(--color-secondary);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
