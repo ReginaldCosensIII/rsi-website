@@ -74,12 +74,24 @@
     border-radius: 0.625rem; /* 10px */
 }
 
+.google-map-placeholder iframe {
+    width: 100%;
+    height: 100%;
+    border: none; /* Removes the default iframe border */
+    border-radius: 0.625rem; /* Ensures the map has rounded corners */
+}
+
 /* --- Department Cards --- */
 .department-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
+
+.g-recaptcha {
+    margin-bottom: 1.5rem; /* Adds space below the reCAPTCHA widget */
+}
+
 .department-card {
     background-color: var(--color-white);
     border: 0.0625rem solid var(--color-border); /* 1px */

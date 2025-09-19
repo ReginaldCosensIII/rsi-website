@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/contact-us.css"> </head>
+    <link rel="stylesheet" href="css/contact-us.css"> 
+</head>
 <body>
 
     <header class="site-header">
@@ -36,25 +37,27 @@
         <div class="header-main">
             <div class="container">
                 <div class="logo">
-                    <a href="index.html"><img src="images/cropped-logo.png" alt="Radiometric Services & Instruments Logo"></a>
+                    <a href="#"><img src="images/cropped-logo.png" alt="Radiometric Services & Instruments Logo"></a>
                 </div>
+
                 <button class="mobile-nav-toggle" aria-controls="main-nav-list" aria-expanded="false">
                     <span class="sr-only">Menu</span>
                     <i class="fa-solid fa-bars" aria-hidden="true"></i>
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
+
                 <nav class="main-nav">
-                    <ul id="main-nav-list" data-visible="false">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Solutions</a></li>
-                        <li><a href="#">Spare Parts & Repairs</a></li>
-                        <li><a href="#">Performance Monitoring</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li class="mobile-only"><a href="contact.html#faq">FAQ</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
+                <ul id="main-nav-list" data-visible="false">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products.html">Products</a></li>
+                    <li><a href="/solutions.html">Solutions</a></li>
+                    <li><a href="/spare-parts.html">Spare Parts & Repairs</a></li>
+                    <li><a href="/performance-monitoring.html">Performance Monitoring</a></li>
+                    <li><a href="/testimonials.html">Testimonials</a></li>
+                    <li><a href="/about-us.html">About Us</a></li>
+                    <li><a href="/contact-us.html">Contact Us</a></li>
+                    <li class="mobile-only"><a href="/faq.html">FAQ</a></li>
+                </ul>
                 </nav>
             </div>
         </div>
@@ -98,6 +101,9 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="6" required></textarea>
                         </div>
+
+                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+
                         <button type="submit" class="btn btn-primary">Submit Message</button>
                     </form>
                 </div>
@@ -124,7 +130,7 @@
                         </div>
                     </div>
                     <div class="google-map-placeholder">
-                        <p>Google Map</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.9809051672046!2d-77.41855622457136!3d39.35666901947569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c9d9a25e8a7257%3A0xedad56faf22ea346!2s4507%20Metropolitan%20Ct%20%23%20J%2C%20Frederick%2C%20MD%2021704!5e0!3m2!1sen!2sus!4v1754558694768!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
@@ -166,17 +172,20 @@
         
     </main>
 
+    <!-- Global Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-main">
                 <div class="footer-details">
                     <div class="logo">
-                        <a href="index.html"><img src="images/cropped-logo.png" alt="Radiometric Services & Instruments Logo"></a>
+                        <a href="#"><img src="images/cropped-logo.png" alt="Radiometric Services & Instruments Logo"></a>
                     </div>
                     <p>Radiometric Services & Instruments, LLC</p>
                     <div class="contact-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        <a href="#">4507 Metropolitan Court Unit J, Frederick, MD 21704</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=4507+Metropolitan+Court+Unit+J,+Frederick,+MD+21704" target="_blank" rel="noopener noreferrer">
+                            4507 Metropolitan Court Unit J, Frederick, MD 21704
+                        </a>
                     </div>
                     <div class="contact-item">
                         <i class="fa-solid fa-phone"></i>
@@ -186,24 +195,25 @@
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Solutions</a></li>
-                        <li><a href="#">Spare Parts</a></li>
-                        <li><a href="#">Performance</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="contact.html#faq">FAQ</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products.html">Products</a></li>
+                        <li><a href="/solutions.html">Solutions</a></li>
+                        <li><a href="/spare-parts.html">Spare Parts & Repairs</a></li>
+                        <li><a href="/performance-monitoring.html">Performance Monitoring</a></li>
+                        <li><a href="/testimonials.html">Testimonials</a></li>
+                        <li><a href="/about-us.html">About Us</a></li>
+                        <li><a href="/contact-us.html">Contact Us</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> 
             <div class="footer-copyright">
                 <p>© <script>document.write(new Date().getFullYear())</script> Radiometric Services & Instruments, LLC All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
+    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/contact-us.js" defer></script> 
 </body>
